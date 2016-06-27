@@ -1,16 +1,14 @@
-package cabin.config;
+package com.cabin.config;
 
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.util.Log4jConfigListener;
 
 import javax.servlet.*;
-import java.util.EnumSet;
 
 public class ApplicationInitializer implements WebApplicationInitializer {
 

@@ -1,4 +1,4 @@
-package cabin.config;
+package com.cabin.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -16,14 +16,14 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("cabin.repository")
+@EnableJpaRepositories("com.cabin.dataBase")
 public class SpringData extends WebMvcConfigurerAdapter {
 
     private static final String HIBERNATE_DIALECT = "hibernate.dialect";
     private static final String HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
     private static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
     private static final String MAX_SIZE = "hibernate.c3p0.max_size";
-    private static final String ENTITYMANAGER_PACKAGES_TO_SCAN = "cabin.entity";
+    private static final String ENTITYMANAGER_PACKAGES_TO_SCAN = "com.cabin.entity";
 
     @Bean
     public DataSource dataSource() {
@@ -32,7 +32,7 @@ public class SpringData extends WebMvcConfigurerAdapter {
             dataSource.setDriverClassName("com.mysql.jdbc.Driver");
             dataSource.setUrl("jdbc:mysql://localhost:3306/cabin?autoReconnect=true&amp;createDatabaseIfNotExist=true&amp;");
             dataSource.setUsername("root");
-            dataSource.setPassword("");
+            dataSource.setPassword("root");
             return dataSource;
         } catch (Exception e) {
             throw new RuntimeException(e);

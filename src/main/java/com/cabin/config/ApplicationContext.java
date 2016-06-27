@@ -1,4 +1,4 @@
-package cabin.config;
+package com.cabin.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import java.security.Security;
 
 @Configuration
-@ComponentScan(basePackages = {"cabin"})
+@ComponentScan(basePackages = {"com.cabin"})
 @EnableWebMvc
 @Import({SpringData.class, Security.class})
 public class ApplicationContext extends WebMvcConfigurerAdapter {
