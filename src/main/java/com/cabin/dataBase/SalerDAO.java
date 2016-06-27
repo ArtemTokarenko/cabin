@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface SalerDAO extends JpaRepository<Saler, Integer> {
-//
-//    public List<Saler> showSales();
-//
-//    public void addSaler();
-//
-//    public void removeSaler();
+    //
+    //    public List<Saler> showSales();
+    //
+    //    public void addSaler();
+    //
+    //    public void removeSaler();
 }

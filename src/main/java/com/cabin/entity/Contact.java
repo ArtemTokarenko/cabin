@@ -12,7 +12,7 @@ public class Contact {
 
     @Id
     @Column(name = "ID")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "FIRSTNAME")
@@ -77,7 +77,5 @@ public class Contact {
     public void setSalerID(Integer salerID) {
         this.salerID = salerID;
     }
-
-
 
 }

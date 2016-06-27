@@ -14,15 +14,8 @@ import java.util.List;
 @Service
 public class ContactService {
 
-@Autowired
-private ContactDAO contactDAO;
-
-
-
-
-
-
-
+    @Autowired
+    private ContactDAO contactDAO;
 
     public List<Contact> getVideoByNameOrDescription(String query) {
         List<Contact> tags = contactDAO.getContactByFirstname("%" + query + "%");
@@ -30,31 +23,24 @@ private ContactDAO contactDAO;
 
     }
 
-
-
-    public ResponceContainer  deleteContact(int id){
+    public ResponceContainer deleteContact(int id) {
         ResponceContainer containerData = new ResponceContainer();
-
-
-
 
         containerData.setCode(200);
         containerData.setMessage("Success");
         return containerData;
     }
 
-    public ResponceContainer  findAllContact(int pageNumber,int pageSize){
+    public ResponceContainer findAllContact(int pageNumber, int pageSize) {
         ResponceContainer containerData = new ResponceContainer();
-
 
         containerData.setCode(200);
         containerData.setMessage("Success");
         return containerData;
     }
 
-    public ResponceContainer getContactBySomeCredits(String name,String secondName,String email,String phoneNumber){
+    public ResponceContainer getContactBySomeCredits(String name, String secondName, String email, String phoneNumber) {
         ResponceContainer containerData = new ResponceContainer();
-
 
         containerData.setCode(200);
         containerData.setMessage("Success");

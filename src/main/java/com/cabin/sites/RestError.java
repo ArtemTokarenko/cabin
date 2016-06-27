@@ -1,8 +1,5 @@
 package com.cabin.sites;
 
-/**
- * Created by Ультрамар on 22.06.2016.
- */
 public class RestError {
     private int appErrorCode;
     private String appErrorMessage;

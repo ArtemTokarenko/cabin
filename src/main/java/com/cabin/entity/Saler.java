@@ -1,6 +1,5 @@
 package com.cabin.entity;
 
-
 import javax.persistence.*;
 
 /**
@@ -12,8 +11,8 @@ import javax.persistence.*;
 public class Saler {
 
     @Id
-    @Column(name="ID")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int salerID;
 
     @Column(name = "FIRSTNAME")
@@ -67,6 +66,5 @@ public class Saler {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
 }
