@@ -3,6 +3,7 @@ package com.cabin.service.impl;
 import com.cabin.beans.UpworkBidBean;
 import com.cabin.entity.Saler;
 import com.cabin.entity.UpworkBid;
+import com.cabin.repository.SalerRepository;
 import com.cabin.repository.UpworkBidRepository;
 import com.cabin.service.interfaces.UpworkBidService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,27 @@ public class UpworkBidServiceImpl implements UpworkBidService {
     @Autowired
     private UpworkBidRepository upworkBidRepository;
 
+    @Autowired
+    private SalerRepository salerRepository;
+
     @Override
-    public List<UpworkBidBean> getBySaler(Saler saler) {
+    public void add(UpworkBid upworkBid) {
+        upworkBidRepository.save(upworkBid);
+    }
+
+    @Override
+    public void update(UpworkBid upworkBid) {
+        upworkBidRepository.save(upworkBid);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        upworkBidRepository.delete(id);
+    }
+
+    @Override
+    public List<UpworkBidBean> getBySaler(Integer salerId) {
+        Saler saler = salerRepository.getById(salerId);
         List<UpworkBidBean> upworkBidBeanList = new ArrayList<>();
         List<UpworkBid> upworkBidList = upworkBidRepository.getBySaler(saler);
         upworkBidList.forEach(u -> upworkBidBeanList.add(UpworkBidBean.toBean(u)));
@@ -57,7 +77,8 @@ public class UpworkBidServiceImpl implements UpworkBidService {
     }
 
     @Override
-    public List<UpworkBidBean> getBySalerAndDateBetween(Saler saler, Date dateFrom, Date dateTo) {
+    public List<UpworkBidBean> getBySalerAndDateBetween(Integer salerId, Date dateFrom, Date dateTo) {
+        Saler saler = salerRepository.getById(salerId);
         List<UpworkBidBean> upworkBidBeanList = new ArrayList<>();
         List<UpworkBid> upworkBidList = upworkBidRepository.getBySalerAndDateBetween(saler, dateFrom, dateTo);
         upworkBidList.forEach(u -> upworkBidBeanList.add(UpworkBidBean.toBean(u)));
@@ -65,7 +86,8 @@ public class UpworkBidServiceImpl implements UpworkBidService {
     }
 
     @Override
-    public List<UpworkBidBean> getBySalerAndUpdatedDateBetween(Saler saler, Date dateFrom, Date dateTo) {
+    public List<UpworkBidBean> getBySalerAndUpdatedDateBetween(Integer salerId, Date dateFrom, Date dateTo) {
+        Saler saler = salerRepository.getById(salerId);
         List<UpworkBidBean> upworkBidBeanList = new ArrayList<>();
         List<UpworkBid> upworkBidList = upworkBidRepository.getBySalerAndUpdatedDateBetween(saler, dateFrom, dateTo);
         upworkBidList.forEach(u -> upworkBidBeanList.add(UpworkBidBean.toBean(u)));
