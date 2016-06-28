@@ -21,7 +21,7 @@ public class SalerBean {
     private String phonenumber;
     private Role role;
     private List<UpworkBid> upworkBidList;
-    //123
+
     public static SalerBean toBean(Saler saler) {
         SalerBean bean = new SalerBean();
         bean.setId(saler.getId());
