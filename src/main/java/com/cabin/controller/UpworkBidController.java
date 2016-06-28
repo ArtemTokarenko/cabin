@@ -34,7 +34,7 @@ public class UpworkBidController {
     }
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public List<UpworkBidBean> getAll(@RequestParam(value = "id") Integer id) {
+    public List<UpworkBidBean> getAll() {
         return upworkBidService.getAll();
     }
 
