@@ -14,28 +14,28 @@ import java.util.List;
 public interface UpworkBidRepository extends JpaRepository<UpworkBid, Integer> {
 
     //simple queries
-    public List<UpworkBid> getBySaler(Saler saler);
+    List<UpworkBid> getBySaler(Saler saler);
 
-    public List<UpworkBid> getByComment(Saler saler);
+    List<UpworkBid> getByComment(Saler saler);
 
-    public List<UpworkBid> getByDate(Date date);
+    List<UpworkBid> getByDate(Date date);
 
-    public List<UpworkBid> getByUpdatedDate(Date date);
+    List<UpworkBid> getByUpdatedDate(Date date);
 
-    public UpworkBid getByUrl(String url);
+    UpworkBid getByUrl(String url);
 
     //complicated queries
-    @Query(value = "SELECT u FROM UpworkBid u WHERE u.saler = :saler AND u.date BETWEEN :dateFrom AND dateTo")
-    public List<UpworkBid> getBySalerAndDateBetween(@Param("saler") Saler saler, @Param("dateFrom") Date dateFrom,
+    @Query(value = "SELECT u FROM UpworkBid u WHERE u.saler = :saler AND u.date BETWEEN :dateFrom AND :dateTo")
+    List<UpworkBid> getBySalerAndDateBetween(@Param("saler") Saler saler, @Param("dateFrom") Date dateFrom,
             @Param("dateTo") Date dateTo);
 
-    @Query(value = "SELECT u FROM UpworkBid u WHERE u.saler = :saler AND u.updatedDate BETWEEN :dateFrom AND dateTo")
-    public List<UpworkBid> getBySalerAndUpdatedDateBetween(@Param("saler") Saler saler,
+    @Query(value = "SELECT u FROM UpworkBid u WHERE u.saler = :saler AND u.updatedDate BETWEEN :dateFrom AND :dateTo")
+    List<UpworkBid> getBySalerAndUpdatedDateBetween(@Param("saler") Saler saler,
             @Param("dateFrom") Date dateFrom,
             @Param("dateTo") Date dateTo);
 
-    @Query(value = "SELECT u FROM UpworkBid u WHERE u.date BETWEEN :dateFrom AND dateTo")
-    public List<UpworkBid> getAllBetweenDate(@Param("dateFrom") Date dateFrom,
+    @Query(value = "SELECT u FROM UpworkBid u WHERE u.date BETWEEN :dateFrom AND :dateTo")
+    List<UpworkBid> getAllBetweenDate(@Param("dateFrom") Date dateFrom,
             @Param("dateTo") Date dateTo);
 
 }

@@ -1,5 +1,6 @@
 package com.cabin.service.impl;
 
+import com.cabin.repository.SalerRepository;
 import com.cabin.service.interfaces.SalerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,6 @@ import org.springframework.stereotype.Service;
 public class SalerServiceImpl implements SalerService {
 
     @Autowired
-    SalerService salerService;
+    private SalerRepository salerRepositoryy;
 
 }
