@@ -1,6 +1,6 @@
 package com.cabin.service;
 
-import com.cabin.repository.ContactRepository;
+import com.cabin.repository.UpworkBidRepository;
 import com.cabin.sites.ResponceContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class ContactService {
 
     @Autowired
-    private ContactRepository contactRepository;
+    private UpworkBidRepository upworkBidRepository;
 
     //    public List<UpworkBid> getVideoByNameOrDescription(String query) {
     //        List<UpworkBid> tags = contactRepository.getContactByFirstname("%" + query + "%");
