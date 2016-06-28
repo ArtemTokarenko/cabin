@@ -4,9 +4,6 @@ import com.cabin.entity.UpworkBid;
 
 import java.util.List;
 
-/**
- * Created by Ультрамар on 22.06.2016.
- */
 public class ResponceContainer<T> {
 
     private T data = null;
