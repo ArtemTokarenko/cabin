@@ -33,7 +33,7 @@ public class UpworkBid {
     @Column(name = "URL")
     private String url;
 
-    @Column(name = "account")
+    @Column(name = "ACCOUNT")
     private String account;
 
 }
