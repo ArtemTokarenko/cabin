@@ -102,4 +102,12 @@ public class Saler {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    public List<UpworkBid> getUpworkBidList() {
+        return upworkBidList;
+    }
+
+    public void setUpworkBidList(List<UpworkBid> upworkBidList) {
+        this.upworkBidList = upworkBidList;
+    }
 }

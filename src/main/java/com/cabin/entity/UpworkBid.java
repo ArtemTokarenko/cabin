@@ -78,4 +78,12 @@ public class UpworkBid {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    public Date getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
+    }
 }
