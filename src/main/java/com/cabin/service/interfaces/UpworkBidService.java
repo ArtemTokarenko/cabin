@@ -1,4 +1,4 @@
 package com.cabin.service.interfaces;
 
-public interface UpworkService {
+public interface UpworkBidService {
 }
