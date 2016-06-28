@@ -38,6 +38,14 @@ public class UpworkBidServiceImpl implements UpworkBidService {
     }
 
     @Override
+    public List<UpworkBidBean> getAll() {
+        List<UpworkBidBean> upworkBidBeanList = new ArrayList<>();
+        List<UpworkBid> upworkBidList = upworkBidRepository.findAll();
+        upworkBidList.forEach(u -> upworkBidBeanList.add(UpworkBidBean.toBean(u)));
+        return upworkBidBeanList;
+    }
+
+    @Override
     public List<UpworkBidBean> getBySaler(Integer salerId) {
         Saler saler = salerRepository.getById(salerId);
         List<UpworkBidBean> upworkBidBeanList = new ArrayList<>();

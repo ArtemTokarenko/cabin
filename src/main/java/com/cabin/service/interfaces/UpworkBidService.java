@@ -15,6 +15,8 @@ public interface UpworkBidService {
 
     void delete (Integer id);
 
+    List<UpworkBidBean> getAll();
+
     List<UpworkBidBean> getBySaler(Integer salerId);
 
     List<UpworkBidBean> getByComment(String comment);
