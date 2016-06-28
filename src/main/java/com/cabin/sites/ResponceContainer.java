@@ -1,6 +1,6 @@
 package com.cabin.sites;
 
-import com.cabin.entity.Contact;
+import com.cabin.entity.UpworkBid;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class ResponceContainer<T> {
         this.pageContainer = pageContainer;
     }
 
-    public void setData(List<Contact> data) {
+    public void setData(List<UpworkBid> data) {
         this.data = (T) data;
     }
 

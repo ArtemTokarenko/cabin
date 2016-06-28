@@ -1,12 +1,9 @@
 package com.cabin.service;
 
-import com.cabin.dataBase.ContactDAO;
-import com.cabin.entity.Contact;
+import com.cabin.repository.ContactRepository;
 import com.cabin.sites.ResponceContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by Ультрамар on 22.06.2016.
@@ -15,13 +12,13 @@ import java.util.List;
 public class ContactService {
 
     @Autowired
-    private ContactDAO contactDAO;
+    private ContactRepository contactRepository;
 
-    public List<Contact> getVideoByNameOrDescription(String query) {
-        List<Contact> tags = contactDAO.getContactByFirstname("%" + query + "%");
-        return tags;
-
-    }
+    //    public List<UpworkBid> getVideoByNameOrDescription(String query) {
+    //        List<UpworkBid> tags = contactRepository.getContactByFirstname("%" + query + "%");
+    //        return tags;
+    //
+    //    }
 
     public ResponceContainer deleteContact(int id) {
         ResponceContainer containerData = new ResponceContainer();

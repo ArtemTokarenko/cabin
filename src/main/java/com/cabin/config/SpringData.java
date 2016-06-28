@@ -16,7 +16,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.cabin.dataBase")
+@EnableJpaRepositories("com.cabin.repository")
 public class SpringData extends WebMvcConfigurerAdapter {
 
     private static final String HIBERNATE_DIALECT = "hibernate.dialect";
