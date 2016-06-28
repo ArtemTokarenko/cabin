@@ -12,4 +12,10 @@ public interface SalerService {
 
     SalerBean getByEmail(String email);
 
+    void add (String login,String password);
+
+    void update (SalerBean saler);
+
+    void delete (Integer id);
+
 }

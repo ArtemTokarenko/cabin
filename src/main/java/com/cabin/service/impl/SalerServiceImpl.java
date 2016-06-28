@@ -37,4 +37,30 @@ public class SalerServiceImpl implements SalerService {
         SalerBean salerBean = SalerBean.toBean(saler);
         return salerBean;
     }
+
+    @Override
+    public void add(String login, String password) {
+        Saler saler = new Saler();
+        saler.setLogin(login);
+        saler.setPassword(password);
+        salerRepository.save(saler);
+
+
+    }
+
+    public void update(SalerBean salerBean) {
+        Saler saler;
+        saler = salerRepository.findOne(salerBean.getId());
+        saler.setFirstname(salerBean.getFirstname());
+        saler.setLastname(saler.getLastname());
+        saler.setEmail(salerBean.getEmail());
+        saler.setPassword(salerBean.getPassword());
+        saler.setPhonenumber(salerBean.getPhonenumber());
+        salerRepository.save(saler);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        salerRepository.delete(id);
+    }
 }

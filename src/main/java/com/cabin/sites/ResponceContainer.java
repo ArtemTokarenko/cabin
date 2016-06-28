@@ -1,9 +1,5 @@
 package com.cabin.sites;
 
-import com.cabin.entity.UpworkBid;
-
-import java.util.List;
-
 public class ResponceContainer<T> {
 
     private T data = null;
@@ -23,7 +19,7 @@ public class ResponceContainer<T> {
         this.pageContainer = pageContainer;
     }
 
-    public void setData(List<UpworkBid> data) {
+    public void setData(T data) {
         this.data = (T) data;
     }
 
