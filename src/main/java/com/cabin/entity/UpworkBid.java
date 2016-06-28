@@ -5,10 +5,11 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
-@Getter
-@Setter
+
 @Entity
 @Table(name = "UPWORKBID")
+@Getter
+@Setter
 public class UpworkBid {
 
     @Id
@@ -34,6 +35,5 @@ public class UpworkBid {
 
     @Column(name = "account")
     private String account;
-
 
 }

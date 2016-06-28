@@ -16,7 +16,7 @@ public interface UpworkBidRepository extends JpaRepository<UpworkBid, Integer> {
     //simple queries
     List<UpworkBid> getBySaler(Saler saler);
 
-    List<UpworkBid> getByComment(Saler saler);
+    List<UpworkBid> getByComment(String comment);
 
     List<UpworkBid> getByDate(Date date);
 

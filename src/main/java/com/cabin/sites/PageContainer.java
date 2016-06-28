@@ -1,8 +1,5 @@
 package com.cabin.sites;
 
-/**
- * Created by Ультрамар on 22.06.2016.
- */
 public class PageContainer {
     private int begin = 0;
     private int end = 0;

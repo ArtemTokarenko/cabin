@@ -6,10 +6,11 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-@Getter
-@Setter
+
 @Entity
 @Table(name = "SALER")
+@Getter
+@Setter
 public class Saler {
 
     @Id
@@ -39,8 +40,7 @@ public class Saler {
     @Enumerated(value = EnumType.ORDINAL)
     private Role role;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, mappedBy = "saler")
+    @OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.PERSIST }, mappedBy = "saler")
     private List<UpworkBid> upworkBidList;
+
 }
-
-

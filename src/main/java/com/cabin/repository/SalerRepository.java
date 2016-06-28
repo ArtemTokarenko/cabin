@@ -7,4 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SalerRepository extends JpaRepository<Saler, Integer> {
 
+    Saler getByLogin(String login);
+
+    Saler getByEmail(String email);
+
 }
