@@ -2,6 +2,7 @@ package com.cabin.service.impl;
 
 import com.cabin.beans.SalerBean;
 import com.cabin.entity.Saler;
+import com.cabin.enums.Role;
 import com.cabin.repository.SalerRepository;
 import com.cabin.service.interfaces.SalerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,11 +44,16 @@ public class SalerServiceImpl implements SalerService {
         Saler saler = new Saler();
         saler.setLogin(login);
         saler.setPassword(password);
-        salerRepository.save(saler);
-
-
+        saler.setRole(Role.ROLE_SALER);
+        saler.setFirstname(null);
+        saler.setLastname(null);
+        saler.setEmail(null);
+        saler.setPhonenumber(null);
+  salerRepository.save(saler);
     }
 
+
+    @Override
     public void update(SalerBean salerBean) {
         Saler saler;
         saler = salerRepository.findOne(salerBean.getId());

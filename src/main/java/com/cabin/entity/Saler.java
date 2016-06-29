@@ -40,7 +40,12 @@ public class Saler {
     @Enumerated(value = EnumType.ORDINAL)
     private Role role;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.PERSIST }, mappedBy = "saler")
+    @OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL}, mappedBy = "saler")
     private List<UpworkBid> upworkBidList;
+
+
+
+
+
 
 }
