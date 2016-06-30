@@ -1,6 +1,6 @@
 package com.cabin.sites;
 
-public class ResponceContainer<T> {
+public class ResponseContainer<T> {
 
     private T data = null;
     private int code = 0;

@@ -2,7 +2,7 @@ package com.cabin.controller;
 
 import com.cabin.beans.SalerBean;
 import com.cabin.service.impl.SalerServiceImpl;
-import com.cabin.sites.ResponceContainer;
+import com.cabin.sites.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,24 +21,24 @@ public class SalerController {
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseBody
-    public ResponceContainer<List<SalerBean>> all(){
-        ResponceContainer dataContainer = new ResponceContainer<>();
+    public ResponseContainer<List<SalerBean>> all(){
+        ResponseContainer dataContainer = new ResponseContainer<>();
         dataContainer.setData(salerServiceImpl.getAll());
         dataContainer.setCode(200);
         return dataContainer;
     }
     @RequestMapping(value = "/getByLogin", method = RequestMethod.GET)
     @ResponseBody
-    public ResponceContainer<List<SalerBean>> getByLogin(@RequestParam(value = "login", required = true) String login){
-        ResponceContainer dataContainer = new ResponceContainer<>();
+    public ResponseContainer<List<SalerBean>> getByLogin(@RequestParam(value = "login", required = true) String login){
+        ResponseContainer dataContainer = new ResponseContainer<>();
         dataContainer.setData(salerServiceImpl.getByLogin(login));
         dataContainer.setCode(200);
         return dataContainer;
     }
     @RequestMapping(value = "/getByEmail", method = RequestMethod.GET)
     @ResponseBody
-    public ResponceContainer<List<SalerBean>> getByEmail(@RequestParam(value = "email", required = true) String email){
-        ResponceContainer dataContainer = new ResponceContainer<>();
+    public ResponseContainer<List<SalerBean>> getByEmail(@RequestParam(value = "email", required = true) String email){
+        ResponseContainer dataContainer = new ResponseContainer<>();
         dataContainer.setData(salerServiceImpl.getByEmail(email));
         dataContainer.setCode(200);
         return dataContainer;
@@ -46,9 +46,9 @@ public class SalerController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    public ResponceContainer add(@RequestParam(value = "login", required = true) String login,
+    public ResponseContainer add(@RequestParam(value = "login", required = true) String login,
                                  @RequestParam(value = "password", required = true) String password){
-        ResponceContainer dataContainer = new ResponceContainer<>();
+        ResponseContainer dataContainer = new ResponseContainer<>();
         salerServiceImpl.add(login, password);
         dataContainer.setCode(200);
         return dataContainer;
@@ -56,8 +56,8 @@ public class SalerController {
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     @ResponseBody
-    public ResponceContainer update(@RequestBody SalerBean salerBean){
-        ResponceContainer dataContainer = new ResponceContainer<>();
+    public ResponseContainer update(@RequestBody SalerBean salerBean){
+        ResponseContainer dataContainer = new ResponseContainer<>();
         salerServiceImpl.update(salerBean);
         dataContainer.setCode(200);
         return dataContainer;
@@ -66,8 +66,8 @@ public class SalerController {
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
-    public ResponceContainer delete(@RequestParam(value = "id", required = true) Integer id){
-        ResponceContainer dataContainer = new ResponceContainer<>();
+    public ResponseContainer delete(@RequestParam(value = "id", required = true) Integer id){
+        ResponseContainer dataContainer = new ResponseContainer<>();
         salerServiceImpl.delete(id);
         dataContainer.setCode(200);
         return dataContainer;
