@@ -24,7 +24,7 @@ public class Saler {
     @Column(name = "LASTNAME")
     private String lastname;
 
-    @Column(name = "LOGIN")
+    @Column(name = "LOGIN")//unique=true
     private String login;
 
     @Column(name = "PASSWORD")

@@ -15,7 +15,7 @@ public interface SalerRepository extends JpaRepository<Saler, Integer> {
 
     Saler getByEmail(String email);
 
-    @Query(value = "SELECT FROM Saler WHERE login = :login", nativeQuery = true)
-    public boolean checkForThePresenceLogin(@Param("login") String name);
+    @Query(value = "SELECT login FROM Saler WHERE login = :login", nativeQuery = true)
+    public String checkForThePresenceLogin(@Param("login") String login);
 
 }

@@ -5,6 +5,7 @@ import com.cabin.entity.Saler;
 import com.cabin.enums.Role;
 import com.cabin.repository.SalerRepository;
 import com.cabin.service.interfaces.SalerService;
+import com.cabin.sites.ResponseContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,16 +41,27 @@ public class SalerServiceImpl implements SalerService {
     }
 
     @Override
-    public void add(String login, String password) {
-        Saler saler = new Saler();
-        saler.setLogin(login);
-        saler.setPassword(password);
-        saler.setRole(Role.ROLE_SALER);
-        saler.setFirstname(null);
-        saler.setLastname(null);
-        saler.setEmail(null);
-        saler.setPhonenumber(null);
-  salerRepository.save(saler);
+    public ResponseContainer add(String login, String password) {
+        ResponseContainer responseContainer = new ResponseContainer<>();
+        if((salerRepository.checkForThePresenceLogin(login))!=null){
+            responseContainer.setMessage("This login is occupied");
+            responseContainer.setCode(406);
+        }
+        else{
+            Saler saler = new Saler();
+            saler.setLogin(login);
+            saler.setPassword(password);
+            saler.setRole(Role.ROLE_SALER);
+            saler.setFirstname(null);
+            saler.setLastname(null);
+            saler.setEmail(null);
+            saler.setPhonenumber(null);
+            salerRepository.save(saler);
+            responseContainer.setMessage("Success");
+            responseContainer.setCode(200);
+
+        }
+        return responseContainer;
     }
 
 

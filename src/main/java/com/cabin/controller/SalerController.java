@@ -48,10 +48,7 @@ public class SalerController {
     @ResponseBody
     public ResponseContainer add(@RequestParam(value = "login", required = true) String login,
                                  @RequestParam(value = "password", required = true) String password){
-        ResponseContainer dataContainer = new ResponseContainer<>();
-        salerServiceImpl.add(login, password);
-        dataContainer.setCode(200);
-        return dataContainer;
+        return  salerServiceImpl.add(login, password);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)

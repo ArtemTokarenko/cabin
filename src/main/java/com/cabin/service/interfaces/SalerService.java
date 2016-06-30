@@ -1,6 +1,7 @@
 package com.cabin.service.interfaces;
 
 import com.cabin.beans.SalerBean;
+import com.cabin.sites.ResponseContainer;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface SalerService {
 
     SalerBean getByEmail(String email);
 
-    void add (String login,String password);
+    ResponseContainer add(String login, String password);
 
     void update (SalerBean saler);
 
