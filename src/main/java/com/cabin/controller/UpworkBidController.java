@@ -10,21 +10,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/upworkBid")
-@ResponseBody
 public class UpworkBidController {
 
     @Autowired
     private UpworkBidService upworkBidService;
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public void add(@ModelAttribute UpworkBid bid) {
+    public void add(@RequestBody UpworkBid bid) {
         upworkBidService.add(bid);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public void update(@ModelAttribute UpworkBid bid) {
+    public void update(@RequestBody UpworkBid bid) {
         upworkBidService.update(bid);
     }
 
@@ -46,16 +45,6 @@ public class UpworkBidController {
     @RequestMapping(value = "/getByComment", method = RequestMethod.GET)
     public List<UpworkBidBean> getBidsBySaler(@RequestParam(value = "comment") String comment) {
         return upworkBidService.getByComment(comment);
-    }
-
-    @RequestMapping(value = "/getByDate", method = RequestMethod.GET)
-    public List<UpworkBidBean> getBidsByDate(@RequestParam(value = "date") Date date) {
-        return upworkBidService.getByDate(date);
-    }
-
-    @RequestMapping(value = "/getByUpdateDate", method = RequestMethod.GET)
-    public List<UpworkBidBean> getBidsByUpdateDate(@RequestParam(value = "date") Date date) {
-        return upworkBidService.getByUpdatedDate(date);
     }
 
     @RequestMapping(value = "/getByUrl", method = RequestMethod.GET)

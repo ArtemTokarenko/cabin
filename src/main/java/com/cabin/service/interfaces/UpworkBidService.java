@@ -21,10 +21,6 @@ public interface UpworkBidService {
 
     List<UpworkBidBean> getByComment(String comment);
 
-    List<UpworkBidBean> getByDate(Date date);
-
-    List<UpworkBidBean> getByUpdatedDate(Date date);
-
     UpworkBidBean getByUrl(String url);
 
     List<UpworkBidBean> getBySalerAndDateBetween(Integer salerId, Date dateFrom, Date dateTo);

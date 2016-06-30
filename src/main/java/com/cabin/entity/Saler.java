@@ -42,10 +42,4 @@ public class Saler {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL}, mappedBy = "saler")
     private List<UpworkBid> upworkBidList;
-
-
-
-
-
-
 }
