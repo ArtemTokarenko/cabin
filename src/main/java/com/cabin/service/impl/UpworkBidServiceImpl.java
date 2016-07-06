@@ -39,6 +39,7 @@ public class UpworkBidServiceImpl implements UpworkBidService {
     }
 
     @Override
+    @Transactional
     public List<UpworkBidBean> getAll() {
         List<UpworkBidBean> upworkBidBeanList = new ArrayList<>();
         List<UpworkBid> upworkBidList = upworkBidRepository.findAll();
